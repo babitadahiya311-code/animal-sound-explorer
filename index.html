@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animal Sound Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Animal Sound Explorer home">
+        <span class="brand-icon" aria-hidden="true">🐾</span>
+        <span>Animal Sound Explorer</span>
+      </a>
+      <a class="skip-link" href="#animals">Skip to animals</a>
+    </nav>
+    <section class="hero-content" id="top">
+      <div>
+        <p class="eyebrow">Listen • Learn • Play</p>
+        <h1>Discover the sounds of amazing animals.</h1>
+        <p class="hero-copy">Explore farm, jungle, ocean, and pet animals with colorful cards, playful animations, and a guessing game that rewards careful listening.</p>
+        <div class="hero-actions">
+          <a class="primary-link" href="#animals">Start exploring</a>
+          <a class="secondary-link" href="#game">Play sound quiz</a>
+        </div>
+      </div>
+      <div class="sound-orbit" aria-hidden="true">
+        <span>🐮</span><span>🦁</span><span>🐬</span><span>🐶</span>
+        <div class="pulse-note">♪</div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="controls-section" aria-labelledby="explore-heading">
+      <div class="section-heading">
+        <p class="eyebrow">Explorer</p>
+        <h2 id="explore-heading">Choose a habitat category</h2>
+      </div>
+      <div class="category-filters" role="group" aria-label="Filter animals by category">
+        <button class="filter-btn active" data-category="all" type="button">All</button>
+        <button class="filter-btn" data-category="farm" type="button">🚜 Farm</button>
+        <button class="filter-btn" data-category="jungle" type="button">🌿 Jungle</button>
+        <button class="filter-btn" data-category="ocean" type="button">🌊 Ocean</button>
+        <button class="filter-btn" data-category="pets" type="button">🏠 Pets</button>
+      </div>
+    </section>
+
+    <section id="animals" class="animal-grid" aria-live="polite"></section>
+
+    <section id="game" class="game-panel" aria-labelledby="game-heading">
+      <div class="game-copy">
+        <p class="eyebrow">Sound guessing game</p>
+        <h2 id="game-heading">Can you name that animal?</h2>
+        <p>Press “Play mystery sound,” listen closely, then choose the animal you think made it. Earn 10 points for each correct answer.</p>
+      </div>
+      <div class="score-card">
+        <span>Score</span>
+        <strong id="score">0</strong>
+      </div>
+      <div class="game-actions">
+        <button id="mysterySound" class="primary-btn" type="button">🔊 Play mystery sound</button>
+        <button id="newRound" class="secondary-btn" type="button">New round</button>
+      </div>
+      <div id="guessOptions" class="guess-options" role="group" aria-label="Animal guess options"></div>
+      <p id="feedback" class="feedback" role="status">Start a round to test your animal sound knowledge!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for curious learners. Sounds are synthesized with the Web Audio API.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
